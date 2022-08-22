@@ -1,0 +1,57 @@
+section {
+    padding: 20px;
+}
+
+.hero--photo {
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+}
+
+.hero--header {
+    margin-bottom: 16px;
+}
+
+.hero__link {
+    color: var(--main-color);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 20px;    
+}
+
+.hero__link:hover {
+    color: var(--second-color);
+}
+
+.hero__info {
+    padding: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.hero--text {
+    font-size: 18px;    
+    max-width: 45%;
+    font-weight: 600;
+}
+
+.card {
+    width: 175px;
+    font-size: 12px;
+}
+
+.card--image {
+    width: 100%;
+    border-radius: 9px;
+}
+
+.card--stats {
+    display: flex;
+    align-items: center;
+}
+
+.card--star {
+    height: 14px;
+}
