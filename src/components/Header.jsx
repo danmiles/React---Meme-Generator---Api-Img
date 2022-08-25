@@ -1,16 +1,13 @@
 import React from "react";
 import "../styles/header.css";
-import logo from "/images/airbnb/air-bnb__logo.svg";
 
 function header() {
   return (
-    <div className="nav__color">
-      <div className="container">
-        <nav>
-          <img src={logo} className="nav__logo" />
-        </nav>
-      </div>
-    </div>
+    <header className="header">
+      <img src="/images/troll__face.png" className="header--image" />
+      <h2 className="header--title">Meme Generator</h2>
+      <h4 className="header--project">React Course - Project 3</h4>
+    </header>
   );
 }
 
