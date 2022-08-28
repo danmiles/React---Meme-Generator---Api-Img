@@ -1,6 +1,6 @@
 import React from "react"
-import DataMeme from "../data/DataMeme";
-import "../styles/meme.css"
+
+import "../styles/Meme.css"
 export default function Meme() {
 
     const [things, setThings] = React.useState(["Thing 1", "Thing 2"])

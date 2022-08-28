@@ -1,48 +1,53 @@
-import React from 'react'
+import React from "react";
+import "../styles/Test.css";
 
 function Test() {
-  /*
-Challenge: complete the function below
-Given a name, return "Good <timeOfDay>, <name>!" depending
-on the current time of day.
+  // 1) ============================================== Start
+  // const [isImportant, setIsImportant] = React.useState("Yes");
 
-4 am - 11:59 am, timeOfDay = "morning"
-12 pm - 4:59 pm: timeOfDay = "afternoon"
-5 pm - 7:59 pm: timeOfDay = "evening"
-8 pm - 3:59 am: timeOfDay = "night"
+  /**
+   * Challenge:
+   * 1. Create a function called `handleClick` that runs
+   *    setIsImportant("No")
+   * 2. add a click event listener to the div.state--value
+   *    that runs `handleClick` when the div is clicked.
+   */
 
-E.g. if it's currently 1 pm, greeting("Jane") ==> "Good afternoon, Jane!"
+  // function handleClick() {
+  //   setIsImportant("No")
 
-Hint: you can get the current time of day by using: 
+  // }
+  // return (
+  //   <div className="state">
+  //     <h1 className="state--title">Is state important to know?</h1>
+  //     <div onClick={handleClick} className="state--value">
+  //       <h1>{isImportant}</h1>
+  //     </div>
+  //   </div>
+  // );
+  // 1) ============================================== End
 
-const date = new Date()
-const hours = date.getHours()
-*/
-const date = new Date()
-const hours = date.getHours()
-let timeOfDay
-function greeting(name) {
-  if (hours <12) {
-    timeOfDay = "moning"
+  /**
+   * Part 2 Challenge: Set up state to track our count (initial value is 0)
+   */
+  let [counterNumber, setCounterNumber] = React.useState(0)
+
+  function increaseNumber() {
+    setCounterNumber(++counterNumber)    
   }
-  else if (hours > 12 && hours < 17 ) {
-    timeOfDay = "afternoon"
+
+  function reduceNumber() {
+    setCounterNumber(--counterNumber)    
   }
-  else if (hours > 17 && hours <20 ) {
-    timeOfDay = "evening"
-  }
-  else {
-    timeOfDay = "night"
-  }
-  return  (`Good ${timeOfDay}, ${name}`)
-  
-}
- 
 
   return (
-    <button className="button" onClick={console.log(greeting("Denis"))}>Greeting button</button>
-    
-  )
+    <div className="counter">
+      <button onClick={reduceNumber}  className="counter--minus">–</button>
+      <div className="counter--count">
+        <h1>{counterNumber}</h1>
+      </div>
+      <button onClick={increaseNumber} className="counter--plus">+</button>
+    </div>
+  );
 }
-
-export default Test
+export default Test;
