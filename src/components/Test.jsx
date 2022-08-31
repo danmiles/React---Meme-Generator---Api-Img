@@ -30,23 +30,27 @@ function Test() {
   /**
    * Part 2 Challenge: Set up state to track our count (initial value is 0)
    */
-  let [counterNumber, setCounterNumber] = React.useState(0)
+  let [counter, setCounter] = React.useState(0)
 
-  function increaseNumber() {
-    setCounterNumber(++counterNumber)    
+  // function increase() {
+  //   setCounter(++counter)    
+  // }
+  // Best practice (prevCounter just name)
+  function increase() {
+    setCounter((prevCouner) => ++prevCouner)    
   }
 
-  function reduceNumber() {
-    setCounterNumber(--counterNumber)    
+  function reduce() {
+    setCounter((prevCouner) => --prevCouner)    
   }
 
   return (
     <div className="counter">
-      <button onClick={reduceNumber}  className="counter--minus">–</button>
+      <button onClick={reduce}  className="counter--minus">–</button>
       <div className="counter--count">
-        <h1>{counterNumber}</h1>
+        <h1>{counter}</h1>
       </div>
-      <button onClick={increaseNumber} className="counter--plus">+</button>
+      <button onClick={increase} className="counter--plus">+</button>
     </div>
   );
 }
